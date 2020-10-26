@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Level from './Components/Level';
 
-function App() {
+
+function App({level}) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        {
+          level !== 11 ? <Level /> : <div> Congratulations you are a genius</div>
+         /* (() => {
 
-export default App;
+            if (level <=10 ){
+              return <Level />
+            }
+            
+            else if (level >= 11) {
+              return <p> Congratulations you are a genius</p>
+            } 
+
+          })()   */
+           
+        }
+
+    </div>
+  )
+}
+export default App

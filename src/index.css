@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  text-align: center;
+  margin-top: 250px;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.level {
+  font-size: 100px;
+  color: green;
+}
+
