@@ -69,7 +69,7 @@ if (score === 50){
      // setLevel(index + 1); 
       setAnswer("");
     } else {
-      setResponse("Wrong Bro");
+      setResponse("Wrong answer");
       setAnswer("")
       setScore(score - 1)
       setSecond(15)
