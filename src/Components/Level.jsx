@@ -4,10 +4,10 @@ import Question from "./Question";
 
 const Level = () => {
   const [index, setIndex] = useState(0);
-  const [score, setScore] = useState(48);
-  const [level, setLevel] = useState(10);
+  const [score, setScore] = useState(0);
+  const [level, setLevel] = useState(1);
   const [answer, setAnswer] = useState(null);
-  const [response, setResponse] = useState("Click Start to get Started");
+  const [response, setResponse] = useState("Click Start to get Started!");
   const [second, setSecond] = useState(15);
   const [isActive, setIsActive] = useState(false);
   const current =  stages[index];
@@ -18,7 +18,7 @@ const Level = () => {
   };
   const stop = () => {
     setIsActive(!isActive);
-    setResponse("Stopped");
+    setResponse("Stopped!");
   };
 
   const reset = () => {
@@ -27,8 +27,8 @@ const Level = () => {
     setAnswer(0);
     setIndex(0);
     setScore(0);
-    setResponse("Click Start to get Started");
-    setLevel("1");
+    setResponse("Click Start to get Started!");
+    setLevel(1);
   };
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Level = () => {
     setSecond(15)
   }
 
-if (score === 50){
+if (score === 20){
   setLevel(level + 1)
   setScore(0)
 }
@@ -81,13 +81,22 @@ if (score === 50){
 
   return (
     <div>
-      <input type="button" value="Start" onClick={start} />
+      <input className="start" type="button" value="Start" onClick={start} />
 
-      <input type="button" value="Stop" onClick={stop} />
-      <input type="button" value="Restart" onClick={reset} />
-      <h2>Time: {second}s</h2>
-      <h2>Level: {level} </h2>
-      <h2>Score: {score} </h2>
+      <input className="stop" type="button" value="Stop" onClick={stop} />
+      <input
+        className="restart"
+        type="button"
+        value="Restart"
+        onClick={reset}
+      />
+      <h2 className="second">Time: {second}s</h2>
+      <h2>
+        Level: <span className="level">{level}</span>{" "}
+      </h2>
+      <h2>
+        Score: <span className="score">{score}</span>{" "}
+      </h2>
       <Question
         var1={current.a}
         var2={current.b}
