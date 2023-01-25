@@ -90,12 +90,15 @@ if (score === 20){
         value="Restart"
         onClick={reset}
       />
-      <h2 className="second">Time: {second}s</h2>
+      <h2 className={`second ${second <= 5 ? "warning" : null}`}>
+        Time: {second}s
+      </h2>
       <h2>
         Level: <span className="level">{level}</span>{" "}
       </h2>
       <h2>
-        Score: <span className="score">{score}</span>{" "}
+        Score:{" "}
+        <span className={`${score <= 0 ? "warning" : "score"}`}>{score}</span>{" "}
       </h2>
       <Question
         var1={current.a}
